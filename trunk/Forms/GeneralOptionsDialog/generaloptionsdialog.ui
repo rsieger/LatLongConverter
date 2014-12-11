@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GeneralOptionsDialog</class>
+ <widget class="QDialog" name="GeneralOptionsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>515</width>
+    <height>208</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>General options</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_5">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Input file</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Encoding:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="CodecInput_ComboBox">
+        <item>
+         <property name="text">
+          <string>UTF-8</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Apple Roman</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Latin-1 (ISO 8859-1)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Output file</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Encoding:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="CodecOutput_ComboBox">
+        <item>
+         <property name="text">
+          <string>UTF-8</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Apple Roman</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Latin-1 (ISO 8859-1)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>End-of-line:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="EOL_ComboBox">
+        <item>
+         <property name="text">
+          <string>LF (Unix, MacOS X)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>CR (MacOS classic)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>CR+LF (Windows)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Format of output filename</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Format:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="FilenameFormat_lineEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>(%a = action number, %N = base filename)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>File extension of output filename</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="TXT_radioButton">
+        <property name="text">
+         <string>txt (Excel, tab delimited text)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="CSV_radioButton">
+        <property name="text">
+         <string>csv (LibreOffice, character separated values)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OK_pushButton">
+       <property name="text">
+        <string>&amp;OK</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Cancel_pushButton">
+       <property name="text">
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>FilenameFormat_lineEdit</tabstop>
+  <tabstop>TXT_radioButton</tabstop>
+  <tabstop>CSV_radioButton</tabstop>
+  <tabstop>OK_pushButton</tabstop>
+  <tabstop>Cancel_pushButton</tabstop>
+  <tabstop>CodecInput_ComboBox</tabstop>
+  <tabstop>CodecOutput_ComboBox</tabstop>
+  <tabstop>EOL_ComboBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

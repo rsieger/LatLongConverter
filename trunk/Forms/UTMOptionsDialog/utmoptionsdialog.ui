@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UTMOptionsDialog</class>
+ <widget class="QDialog" name="UTMOptionsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>441</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Convert positions dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_8">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="Geodetic_groupBox">
+     <property name="title">
+      <string>Position of columns</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_1">
+        <property name="text">
+         <string>Latitude:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="LatitudeColumn_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>71</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Longitude:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="LongitudeColumn_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>71</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="ReferenceEllipsoid_groupBox_1">
+     <property name="title">
+      <string>Reference ellipsoid</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="0" column="0">
+       <widget class="QComboBox" name="ReferenceEllipsoid_comboBox_1">
+        <item>
+         <property name="text">
+          <string>Airy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Airy, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Australian National</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bessel 1841</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bessel 1841 (Nambia)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Clarke 1866</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Clarke 1880</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Everest</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Everest, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1960 (Mercury)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1960, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1968</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GRS-67</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GRS-80</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Helmert 1906</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hough</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>International</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Krassovsky</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>South American 1969</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-60</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-66</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-72</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-84</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ETRS-89</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="UTM_groupBox">
+     <property name="title">
+      <string>Position of columns</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Northing [m]:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="NorthingColumn_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>71</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Easting [m]:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="EastingColumn_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>71</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Zone:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="ZoneColumn_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>158</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="ReferenceEllipsoid_groupBox_2">
+     <property name="title">
+      <string>Reference ellipsoid</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_7">
+      <item row="0" column="0">
+       <widget class="QComboBox" name="ReferenceEllipsoid_comboBox_2">
+        <item>
+         <property name="text">
+          <string>Airy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Airy, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Australian National</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bessel 1841</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bessel 1841 (Nambia)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Clarke 1866</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Clarke 1880</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Everest</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Everest, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1960 (Mercury)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1960, modified</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fischer 1968</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GRS-67</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GRS-80</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Helmert 1906</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hough</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>International</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Krassovsky</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>South American 1969</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-60</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-66</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-72</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WGS-84</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ETRS-89</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Resolution</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Number of digits:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="NumOfDigits_spinBox">
+        <property name="maximum">
+         <number>10</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>145</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Decimal-separator</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="Dot_radioButton">
+        <property name="text">
+         <string>. (dot)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="Comma_radioButton">
+        <property name="text">
+         <string>, (comma)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="DeleteInputFile_checkBox">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Delete input file, be careful</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="ClearAll_pushButton">
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OK_pushButton">
+       <property name="text">
+        <string>&amp;OK</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Cancel_pushButton">
+       <property name="text">
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>LatitudeColumn_lineEdit</tabstop>
+  <tabstop>LongitudeColumn_lineEdit</tabstop>
+  <tabstop>ReferenceEllipsoid_comboBox_1</tabstop>
+  <tabstop>NorthingColumn_lineEdit</tabstop>
+  <tabstop>EastingColumn_lineEdit</tabstop>
+  <tabstop>ZoneColumn_lineEdit</tabstop>
+  <tabstop>ReferenceEllipsoid_comboBox_2</tabstop>
+  <tabstop>NumOfDigits_spinBox</tabstop>
+  <tabstop>Dot_radioButton</tabstop>
+  <tabstop>Comma_radioButton</tabstop>
+  <tabstop>DeleteInputFile_checkBox</tabstop>
+  <tabstop>ClearAll_pushButton</tabstop>
+  <tabstop>OK_pushButton</tabstop>
+  <tabstop>Cancel_pushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
