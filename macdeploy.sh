@@ -4,7 +4,7 @@ echo LatLong Converter
 
 echo - macdeployqt 
 
-cd ~/Development/aforge/llconverter
+cd ~/Development/GitHub/LatLongConverter
 
 rm -R '../../Distribution/LatLongConverter/LatLongConverter.app'
 cp -R './LatLongConverter-build-Desktop_Qt_5_3_2_LLDB-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
