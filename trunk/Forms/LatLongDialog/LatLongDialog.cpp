@@ -172,8 +172,8 @@ void MainWindow::doLatLongDialog()
     else
         dialog.Comma_radioButton->setChecked( true );
 
-    dialog.Latitude_lineEdit->setText( tr( "53d32'19.61'' N" ) );
-    dialog.Longitude_lineEdit->setText( tr( "8d34'47.56'' E" ) );
+    dialog.Latitude_lineEdit->setText( tr( "53°32'19.61'' N" ) );
+    dialog.Longitude_lineEdit->setText( tr( "8°34'47.56'' E" ) );
 
     dialog.ZoomLevel_spinBox->setValue( gi_ll_ZoomLevel );
     dialog.ZoomLevel_spinBox->setRange( 1, 20 );
