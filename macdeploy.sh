@@ -19,6 +19,7 @@ codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Insti
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Frameworks/QtNetwork.framework'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Frameworks/QtPrintSupport.framework'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Frameworks/QtWidgets.framework'
+codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Frameworks/libz.1.dylib'
 
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/bearer/libqcorewlanbearer.dylib'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/bearer/libqgenericbearer.dylib'
