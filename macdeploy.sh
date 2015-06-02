@@ -7,7 +7,7 @@ echo - macdeployqt
 cd ~/Development/GitHub/LatLongConverter
 
 rm -R '../../Distribution/LatLongConverter/LatLongConverter.app'
-cp -R './build-LatLongConverter-Desktop_Qt_5_4_1_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
+cp -R './build-LatLongConverter-Desktop_Qt_5_4_2_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
 cp './trunk/Resources/Info.plist' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Info.plist'
 
 /Developer/Qt/5.4/clang_64/bin/macdeployqt '../../Distribution/LatLongConverter/LatLongConverter.app'
