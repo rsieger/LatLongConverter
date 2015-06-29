@@ -227,7 +227,7 @@ private:
     void setNormalCursor();
     void setStatusBar( const QString &Message = "", const int seconds = 0 );
     void setStatusBarFileInProgress( const QString &Filename, const QString &Message = "", const int i_seconds = 0 );
-    void setWTitle( const int ActionNumber, const QString &FilenameFormat, const int Extension, const QStringList &sl_FilenameList );
+    void setWTitle( const int ActionNumber, const QString &FilenameFormat, const int Extension, const QStringList FilenameList );
     void setWaitCursor();
     void showFilenameList( const int ActionNumber, const QString &FilenameFormat, const int Extension, const QStringList FilenameList );
     void showList( const QStringList List );
