@@ -57,13 +57,13 @@ int MainWindow::LatLongConverter( const QString &s_FilenameIn, const QString &s_
 
     initProgress( i_NumOfFiles, s_FilenameIn, tr( "Converting positions..." ), n );
 
-    tout << sl_Input.at( i++ )  << "\tLatitude\tLongitude" << s_EOL;
+    tout << "Latitude\tLongitude" << "\t" << sl_Input.at( i++ ) << s_EOL;
 
     while ( ( i < n ) && ( stopProgress != _APPBREAK_ ) )
     {
         llc->convertLLtoLL( sl_Input.at( i ).section( "\t", i_ColumnLatitude-1, i_ColumnLatitude-1 ), sl_Input.at( i ).section( "\t", i_ColumnLongitude-1, i_ColumnLongitude-1 ) );
 
-        tout << sl_Input.at( i ) << "\t" << llc->Latitude() << "\t" << llc->Longitude() << s_EOL;
+        tout << llc->Latitude() << "\t" << llc->Longitude() << "\t" << sl_Input.at( i ) << s_EOL;
 
         stopProgress = incProgress( i_NumOfFiles, ++i );
     }

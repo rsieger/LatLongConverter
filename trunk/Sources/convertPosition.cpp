@@ -1040,7 +1040,10 @@ int convertPosition::convertLLtoLL( const QString &s_Latitude, const QString &s_
             Direction = 1;
             dPos      = longitude.toDouble();
 
-            if ( dPos < 0 )
+            if ( dPos > 180. )
+                dPos -= 360.;
+
+            if ( dPos < 0. )
             {
                 Direction	= -1;
                 dPos		= -dPos;

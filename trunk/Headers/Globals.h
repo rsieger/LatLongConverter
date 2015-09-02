@@ -6,7 +6,7 @@
     const QString _PROGRAMDOI_                       = "doi:10.1594/PANGAEA.787692";
     const QString _PROGRAMREADME_                    = "http://wiki.pangaea.de/wiki/LatLongConverter";
 
-    const QString _VERSION_                          = "2.4";	// Version number, 2014-09-25
+    const QString _VERSION_                          = "2.5";	// Version number, 2015-09-02
     const QChar   _PSEPARATOR_                       = '|';
 
     const int   _NOERROR_                            = 0;
