@@ -131,7 +131,7 @@ int MainWindow::doUTMOptionsDialog( const int mode, int &i_LatitudeColumn, int &
     case _LLUTM_:
         dialog.setWindowTitle( tr( "Latitude/Longitude to UTM" ) );
         dialog.NumOfDigits_spinBox->setValue( i_NumOfDigits );
-        dialog.NumOfDigits_spinBox->setRange( 0, 2 );
+        dialog.NumOfDigits_spinBox->setRange( 0, 10 );
         dialog.UTM_groupBox->hide();
         dialog.ReferenceEllipsoid_groupBox_2->hide();
         break;
