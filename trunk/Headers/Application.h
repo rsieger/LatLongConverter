@@ -89,6 +89,8 @@ public:
     int         gi_EOL;                             //!< End-of-Line Zeichen fr die Outputdateien
     int         gi_Extension;                       //! Dateierweiterung fr Ausgabedateien
 
+    bool        gb_showProgressBar;                 //!< Soll der ProgressBar im Fenster unten rechts angezeigt werden?
+
     // find area
     QString     gs_AreaDatabaseFilename;             //!< Name der Area database
     bool        gb_fa_DeleteInputFile;               //!< loesche Inputdatei
@@ -214,7 +216,7 @@ private:
     void clearMessage();
     void createActions();
     void createMenus();
-    void createStatusBar();
+    void createStatusBar( const bool showProgressBar );
     void endTool( const int err, const int stopProgress, int &ActionNumber, const QString &FilenameFormat, const int Extension, QStringList &FilenameList, const QString &doneMessage = "Done", const QString &canceledMessage = "Converter was canceled", const bool clearList = false, const bool incActionNumber = true );
     void initFileProgress( const int NumOfFiles, const QString &FilenameIn, const QString &MessageText );
     void initProgress( const int NumOfFiles, const QString &Filename, const QString &MessageText, const int totalNumberOfSteps );
