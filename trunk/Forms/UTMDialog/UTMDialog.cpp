@@ -163,7 +163,7 @@ void UTMDialog::convertUTMtoLL()
 
     if ( err == -4 )
     {
-        QMessageBox::information( this, "Error", "Please note that the UTM Easting is outside of\nthe UTM limits. Please choose a UTM Easting\nbetween 161622 to 804300." );
+        QMessageBox::information( this, "Error", "Please note that the UTM Easting is outside of\nthe UTM limits. Please choose a UTM Easting\nbetween 161622 to 999999." );
         return;
     }
 

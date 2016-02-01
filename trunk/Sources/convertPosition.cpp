@@ -95,7 +95,7 @@ int convertPosition::convertUTMtoLL( const QString &s_Zone, const QString &s_Eas
     if ( ( ZoneLetter >= 78 ) && ( ( dUTMNorthing < 0 ) || ( dUTMNorthing > 9328112 ) ) )
         err = -3;
 
-    if ( ( dUTMEasting < 161622 ) || ( dUTMEasting > 809999 ) ) // 778266
+    if ( ( dUTMEasting < 161622 ) || ( dUTMEasting > 999999 ) ) // 778266, 809999
         err = -4;
 
     if ( err != _NOERROR_ )
