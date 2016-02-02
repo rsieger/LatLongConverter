@@ -33,7 +33,7 @@ Source
 Defense Mapping Agency. 1987b. DMA Technical Report: Supplement to Department of Defense World Geodetic System
 1984 Technical Report. Part I and II. Washington, DC: Defense Mapping Agency
 
-converts UTM coords to lat/long.  Equations from USGS Bulletin 1532
+Converts UTM coords to lat/long. Equations from USGS Bulletin 1532 (hdl:10013/epic.46739.d001)
 East Longitudes are positive, West longitudes are negative.
 North latitudes are positive, South latitudes are negative
 Lat and Long are in decimal degrees.
@@ -157,7 +157,7 @@ Source
 Defense Mapping Agency. 1987b. DMA Technical Report: Supplement to Department of Defense World Geodetic System
 1984 Technical Report. Part I and II. Washington, DC: Defense Mapping Agency
 
-converts lat/long to UTM coords.  Equations from USGS Bulletin 1532
+Converts lat/long to UTM coords. Equations from USGS Bulletin 1532 (hdl:10013/epic.46739.d001)
 East Longitudes are positive, West longitudes are negative.
 North latitudes are positive, South latitudes are negative
 Lat and Long are in decimal degrees
