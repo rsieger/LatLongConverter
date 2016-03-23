@@ -46,7 +46,7 @@ void MainWindow::createActions()
 
     exitAction = new QAction(tr("&Quit"), this);
     exitAction->setShortcut(tr("Ctrl+Q"));
-    connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+    connect(exitAction, SIGNAL(triggered()), this, SLOT(exitApplication()));
 
     // Basic tools
 
@@ -138,15 +138,8 @@ void MainWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction( setOptionsAction );
 
-#if defined(Q_OS_LINUX)
     fileMenu->addSeparator();
     fileMenu->addAction( exitAction );
-#endif
-
-#if defined(Q_OS_WIN)
-    fileMenu->addSeparator();
-    fileMenu->addAction( exitAction );
-#endif
 
 // **********************************************************************************************
 
