@@ -4,7 +4,7 @@
 
 // Application constants
     const QString _PROGRAMDOI_                       = "doi:10.1594/PANGAEA.787692";
-    const QString _PROGRAMREADME_                    = "http://wiki.pangaea.de/wiki/LatLongConverter";
+    const QString _PROGRAMREADME_                    = "https://wiki.pangaea.de/wiki/LatLongConverter";
 
     const QString _VERSION_                          = "2.6";	// Version number, 2015-12-28
     const QChar   _PSEPARATOR_                       = '|';
