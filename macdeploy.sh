@@ -49,7 +49,7 @@ cd '/Volumes/LatLong Converter'
 rm -rf .fseventsd
 mkdir .fseventsd
 touch .fseventsd/no_log
-cd ~/Development/Distribution
+cd ~/Development/Distribution/LatLongConverter
 
 echo - verify package
 
@@ -57,3 +57,11 @@ codesign -d '/Volumes/LatLong Converter/LatLongConverter.app'
 
 echo
 hdiutil detach '/Volumes/LatLong Converter'
+
+echo - move application
+
+rm -R /Applications/LatLongConverter.app
+cp -R LatLongConverter.app /Applications
+cd ~/Development/Distribution
+
+echo - finished
