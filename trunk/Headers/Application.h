@@ -249,6 +249,7 @@ private:
     QString getVersion();
     QString setEOLChar( const int EOL );
     QString setExtension( const int Extension );
+    QString getFileChecksum( const QString &FilenameIn );
 
     QMenu   *fileMenu;
     QMenu   *basicToolsMenu;
