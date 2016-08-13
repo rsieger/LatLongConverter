@@ -173,7 +173,7 @@ void MainWindow::createMenus()
 // **********************************************************************************************
 // **********************************************************************************************
 
-void MainWindow::enableMenuItems( const QStringList sl_FilenameList )
+void MainWindow::enableMenuItems( const QStringList &sl_FilenameList )
 {
     bool b_containsBinaryFile = containsBinaryFile( sl_FilenameList );
 
