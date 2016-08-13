@@ -140,7 +140,7 @@ public:
 
     int findArea( const QString &FilenameIn, const QString &FilenameOut, const int CodecInput, const int CodecOutput, const int EOL, QVector<AreaItem> &Area, QVector<PositionItem> &Position, const bool DeleteInputFile = false, const int NumOfFiles = 0 );
     int readAreaDataBaseFile(const QString &FilenameADB, QVector<AreaItem> &Area, QVector<PositionItem> &Position );
-    int buildAreaDatabase( const QString& FilenameIn, const int CodecInput, const int NumOfFiles );
+    int buildAreaDatabase( const QString &FilenameIn, const int CodecInput, const int NumOfFiles );
     int PtInPolygon( double d_Latitude, double d_Longitude, int StartPosition, int NumOfPoints, QVector<PositionItem> &v_Position );
     int polyCentroid( const QString &FilenameIn, const QString &FilenameOut, const int CodecInput, const int CodecOutput, const int EOL, const bool DeleteInputFile, const int NumOfFiles );
 
@@ -217,7 +217,7 @@ private:
     void appendItem( QStringList &List, const QString &Item, const QString &SS = "", const QString &RS = "" );
     void compressFile( const QString &FilenameIn );
     void clearFilenameList( int &ActionNumber, QStringList &FilenameList );
-    void clearList( QStringList& List );
+    void clearList( QStringList &List );
     void clearMessage();
     void createActions();
     void createMenus();

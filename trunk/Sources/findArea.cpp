@@ -270,7 +270,7 @@ int MainWindow::readAreaDataBaseFile( const QString &FilenameADB, QVector<AreaIt
 // **********************************************************************************************
 // 2011-10-19
 
-int MainWindow::buildAreaDatabase( const QString& s_FilenameIn, const int i_CodecInput, const int i_NumOfFiles )
+int MainWindow::buildAreaDatabase( const QString &s_FilenameIn, const int i_CodecInput, const int i_NumOfFiles )
 {
     int         n                   = 0;
     int         stopProgress        = 0;
@@ -438,7 +438,7 @@ int MainWindow::buildAreaDatabase( const QString& s_FilenameIn, const int i_Code
 // **********************************************************************************************
 // **********************************************************************************************
 /*
-int MainWindow::WriteADB( const QString& FilenameADB )
+int MainWindow::WriteADB( const QString &FilenameADB )
 {
     QString FilenameOut = FilenameADB;
     FilenameOut.replace( "//", "/" );
