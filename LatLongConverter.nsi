@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "LatLongConverter"
-!define PRODUCT_VERSION "2.6"
+!define PRODUCT_VERSION "2.7"
 !define PRODUCT_PUBLISHER "PANGAEA"
 !define PRODUCT_WEB_SITE "http://www.pangaea.de"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\LatLongConverter.exe"
@@ -48,6 +48,7 @@ RequestExecutionLevel admin
 Section "MainSection" SEC01
   SetOutPath "$INSTDIR"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\LatLongConverter.exe"
+  File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\curl.exe"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\Qt5Core.dll"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\Qt5Gui.dll"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\Qt5Network.dll"
@@ -55,8 +56,6 @@ Section "MainSection" SEC01
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\libgcc_s_dw2-1.dll"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\libstdc++-6.dll"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\libwinpthread-1.dll"
-  File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\libeay32.dll"
-  File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\ssleay32.dll"
 
   SetOutPath "$INSTDIR\platforms"
   File "C:\Users\rsieger\Documents\Development\Distribution\LatLongConverter\platforms\qminimal.dll"
@@ -100,6 +99,7 @@ FunctionEnd
 
 Section Uninstall
   Delete "$INSTDIR\LatLongConverter.exe"
+  Delete "$INSTDIR\curl.exe"
   Delete "$INSTDIR\Qt5Core.dll"
   Delete "$INSTDIR\Qt5Gui.dll"
   Delete "$INSTDIR\Qt5Network.dll"
@@ -107,8 +107,6 @@ Section Uninstall
   Delete "$INSTDIR\libgcc_s_dw2-1.dll"
   Delete "$INSTDIR\libstdc++-6.dll"
   Delete "$INSTDIR\libwinpthread-1.dll"
-  Delete "$INSTDIR\libeay32.dll"
-  Delete "$INSTDIR\ssleay32.dll"
   Delete "$INSTDIR\platforms\qminimal.dll"
   Delete "$INSTDIR\platforms\qwindows.dll"
   Delete "$INSTDIR\uninst.exe"

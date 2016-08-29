@@ -30,10 +30,6 @@ macx {
 }
 
 win32 {
-    # OpenSSL
-    LIBS += -LC:/Qt/OpenSSL-Win32/bin -lubsec
-    INCLUDEPATH += C:/Qt/OpenSSL-Win32/include
-
     # Icon
     RC_FILE = ./Resources/Application.rc
 }
@@ -50,7 +46,6 @@ INCLUDEPATH += ./Headers
 
 HEADERS = ./Headers/Application.h \
     ./Headers/Globals.h \
-    ./Headers/Webfile.h \
     ./Headers/Ellipsoid.h \
     ./Headers/findArea.h \
     ./Headers/convertPosition.h \
@@ -75,7 +70,6 @@ SOURCES = ./Sources/ApplicationInit.cpp \
     ./Sources/LatLongConverter.cpp \
     ./Sources/GaussKruegerConverter.cpp \
     ./Sources/UTMConverter.cpp \
-    ./Sources/Webfile.cpp \
     ./Forms/AboutDialog/AboutDialog.cpp \
     ./Forms/FindAreaDialog/FindAreaDialog.cpp \
     ./Forms/GeneralOptionsDialog/GeneralOptionsDialog.cpp \
