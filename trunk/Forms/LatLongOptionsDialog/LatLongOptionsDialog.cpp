@@ -22,8 +22,8 @@ LatLongOptionsDialog::LatLongOptionsDialog( QWidget *parent ) : QDialog( parent 
     connect(OK_pushButton, SIGNAL(clicked()), this, SLOT(accept()));
     connect(Cancel_pushButton, SIGNAL(clicked()), this, SLOT(reject()));
 
-    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
-    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
+    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
+    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
 }
 
 // ***********************************************************************************************************************
@@ -36,17 +36,16 @@ void LatLongOptionsDialog::clearAll()
     LongitudeColumn_lineEdit->setText( "" );
 
     NumOfDigits_spinBox->setValue( 4 );
-
     Dot_radioButton->setChecked( true );
 
-    enableOKButton();
+    enableOKButtonLL();
 }
 
 // **********************************************************************************************
 // **********************************************************************************************
 // **********************************************************************************************
 
-void LatLongOptionsDialog::enableOKButton()
+void LatLongOptionsDialog::enableOKButtonLL()
 {
     QList<int>  testList;
 
@@ -122,7 +121,7 @@ int MainWindow::doLatLongOptionsDialog( int &i_LatitudeColumn, int &i_LongitudeC
     dialog.OK_pushButton->setWhatsThis( "Close dialog" );
     dialog.Cancel_pushButton->setWhatsThis( "Cancel dialog" );
 
-    dialog.enableOKButton();
+    dialog.enableOKButtonLL();
 
     dialog.move( posDialog );
     dialog.resize( dialog.sizeHint() );

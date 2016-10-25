@@ -57,7 +57,7 @@ int MainWindow::LatLongConverter( const QString &s_FilenameIn, const QString &s_
 
     initProgress( i_NumOfFiles, s_FilenameIn, tr( "Converting positions..." ), n );
 
-    tout << "Latitude\tLongitude" << "\t" << sl_Input.at( i++ ) << s_EOL;
+    tout << "Latitude\tLongitude\t" << sl_Input.at( i++ ) << s_EOL;
 
     while ( ( i < n ) && ( stopProgress != _APPBREAK_ ) )
     {

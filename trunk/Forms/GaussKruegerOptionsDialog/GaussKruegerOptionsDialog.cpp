@@ -22,8 +22,12 @@ GaussKruegerOptionsDialog::GaussKruegerOptionsDialog( QWidget *parent ) : QDialo
     connect(OK_pushButton, SIGNAL(clicked()), this, SLOT(accept()));
     connect(Cancel_pushButton, SIGNAL(clicked()), this, SLOT(reject()));
 
-    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
-    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
+    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
+    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
+
+    connect( HochColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonGK() ) );
+    connect( RechtsColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonGK() ) );
+    connect( StreifenColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonGK() ) );
 }
 
 // ***********************************************************************************************************************
@@ -34,22 +38,23 @@ void GaussKruegerOptionsDialog::clearAll()
 {
     LatitudeColumn_lineEdit->setText( "" );
     LongitudeColumn_lineEdit->setText( "" );
+
     HochColumn_lineEdit->setText( "" );
     RechtsColumn_lineEdit->setText( "" );
     StreifenColumn_lineEdit->setText( "" );
 
     NumOfDigits_spinBox->setValue( 4 );
-
     Dot_radioButton->setChecked( true );
 
-    enableOKButton();
+    enableOKButtonLL();
+    enableOKButtonGK();
 }
 
 // **********************************************************************************************
 // **********************************************************************************************
 // **********************************************************************************************
 
-void GaussKruegerOptionsDialog::enableOKButton()
+void GaussKruegerOptionsDialog::enableOKButtonLL()
 {
     QList<int>  testList;
 
@@ -62,6 +67,54 @@ void GaussKruegerOptionsDialog::enableOKButton()
     if ( testList.at( 1 ) < 1 )  LongitudeColumn_lineEdit->setText( "" );
 
     if ( ( testList.at( 0 ) > 0 ) && ( testList.at( 1 ) > 0 ) )         // Latitude > 0 and Longitude > 0
+        b_OK = true;
+
+    if ( b_OK == true )
+    {
+        for ( int i=0; i<testList.count(); i++ )
+        {
+            if ( testList.at( i ) > 0 )
+            {
+                for ( int j=0; j<testList.count(); j++ )
+                {
+                    if ( ( i != j ) && ( testList.at( i ) == testList.at( j ) ) )
+                         b_OK = false;
+                }
+            }
+        }
+    }
+
+    if ( b_OK == true )
+    {
+        OK_pushButton->setEnabled( true );
+        OK_pushButton->setDefault( true );
+    }
+    else
+    {
+        OK_pushButton->setEnabled( false );
+        Cancel_pushButton->setDefault( true );
+    }
+}
+
+// **********************************************************************************************
+// **********************************************************************************************
+// **********************************************************************************************
+
+void GaussKruegerOptionsDialog::enableOKButtonGK()
+{
+    QList<int>  testList;
+
+    bool b_OK = false;
+
+    testList.append( HochColumn_lineEdit->text().toInt() );          // 0
+    testList.append( RechtsColumn_lineEdit->text().toInt() );        // 1
+    testList.append( StreifenColumn_lineEdit->text().toInt() );      // 2
+
+    if ( testList.at( 0 ) < 1 )  HochColumn_lineEdit->setText( "" );
+    if ( testList.at( 1 ) < 1 )  RechtsColumn_lineEdit->setText( "" );
+    if ( testList.at( 2 ) < 1 )  StreifenColumn_lineEdit->setText( "" );
+
+    if ( ( testList.at( 0 ) > 0 ) && ( testList.at( 1 ) > 0 ) && ( testList.at( 2 ) > 0 ) )         // Hoch > 0, Rechts > 0, and Streifen > 0
         b_OK = true;
 
     if ( b_OK == true )
@@ -122,21 +175,27 @@ int MainWindow::doGaussKruegerOptionsDialog( const int mode, int &i_LatitudeColu
 
     switch ( mode )
     {
-    case _GKLL_:
-        dialog.setWindowTitle( tr( "Gauss-Krüger to Latitude/Longitude" ) );
-        dialog.NumOfDigits_spinBox->setValue( i_NumOfDigits );
-        dialog.NumOfDigits_spinBox->setRange( 0, 10 );
-        dialog.Geodetic_groupBox->hide();
-        break;
     case _LLGK_:
         dialog.setWindowTitle( tr( "Latitude/Longitude to Gauss-Krüger" ) );
         dialog.NumOfDigits_spinBox->setValue( i_NumOfDigits );
         dialog.NumOfDigits_spinBox->setRange( 0, 2 );
         dialog.GaussKrueger_groupBox->hide();
+        dialog.enableOKButtonLL();
+        break;
+
+    case _GKLL_:
+        dialog.setWindowTitle( tr( "Gauss-Krüger to Latitude/Longitude" ) );
+        dialog.NumOfDigits_spinBox->setValue( i_NumOfDigits );
+        dialog.NumOfDigits_spinBox->setRange( 0, 10 );
+        dialog.Geodetic_groupBox->hide();
+        dialog.enableOKButtonGK();
+        break;
+
+    default:
+        dialog.enableOKButtonLL();
+        dialog.enableOKButtonGK();
         break;
     }
-
-    dialog.enableOKButton();
 
     dialog.OK_pushButton->setWhatsThis( "Close dialog" );
     dialog.Cancel_pushButton->setWhatsThis( "Cancel dialog" );

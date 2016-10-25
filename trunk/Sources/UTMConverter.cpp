@@ -74,10 +74,10 @@ int MainWindow::UTMConverter( const QString &s_FilenameIn, const QString &s_File
     switch( mode )
     {
     case _UTMLL_:
-        tout << sl_Input.at( i++ ) << "\tLatitude\tLongitude" << s_EOL;
+        tout << "Latitude\tLongitude\t" << sl_Input.at( i++ ) << s_EOL;
         break;
     case _LLUTM_:
-        tout << sl_Input.at( i++ ) << "\tNorthing [m]\tEasting [m]\tZone" << s_EOL;
+        tout << "Northing [m]\tEasting [m]\tZone\t" << sl_Input.at( i++ ) << s_EOL;
         break;
     }
 
@@ -87,7 +87,7 @@ int MainWindow::UTMConverter( const QString &s_FilenameIn, const QString &s_File
         {
         case _UTMLL_:
             llc->convertUTMtoLL( sl_Input.at( i ).section( "\t", i_ColumnZone-1, i_ColumnZone-1 ), sl_Input.at( i ).section( "\t", i_ColumnEasting-1, i_ColumnEasting-1 ), sl_Input.at( i ).section( "\t", i_ColumnNorthing-1, i_ColumnNorthing-1 ), i_ReferenceEllipsoid );
-            tout << sl_Input.at( i ) << "\t" << llc->Latitude() << "\t" << llc->Longitude() << s_EOL;
+            tout << llc->Latitude() << "\t" << llc->Longitude() << "\t" << sl_Input.at( i ) << s_EOL;
             break;
 
         case _LLUTM_:
@@ -102,7 +102,7 @@ int MainWindow::UTMConverter( const QString &s_FilenameIn, const QString &s_File
                 llc->convertLLtoUTM( sl_Input.at( i ).section( "\t", i_ColumnLatitude-1, i_ColumnLatitude-1 ), sl_Input.at( i ).section( "\t", i_ColumnLongitude-1, i_ColumnLongitude-1 ), i_ReferenceEllipsoid );
             }
 
-            tout << sl_Input.at( i ) << "\t" << QString( "%1" ).arg( llc->Northing(), 0, 'f', i_NumOfDigits ) << "\t" << QString( "%1" ).arg( llc->Easting(), 0, 'f', i_NumOfDigits ) << "\t" << llc->Zone() << s_EOL;
+            tout << QString( "%1" ).arg( llc->Northing(), 0, 'f', i_NumOfDigits ) << "\t" << QString( "%1" ).arg( llc->Easting(), 0, 'f', i_NumOfDigits ) << "\t" << llc->Zone() << "\t" << sl_Input.at( i ) << s_EOL;
 
             break;
         }

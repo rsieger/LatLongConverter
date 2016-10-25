@@ -16,7 +16,7 @@ private slots:
     void clearAll();
 
 public slots:
-    void enableOKButton();
+    void enableOKButtonLL();
 
 };
 

@@ -22,8 +22,12 @@ UTMOptionsDialog::UTMOptionsDialog( QWidget *parent ) : QDialog( parent )
     connect(OK_pushButton, SIGNAL(clicked()), this, SLOT(accept()));
     connect(Cancel_pushButton, SIGNAL(clicked()), this, SLOT(reject()));
 
-    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
-    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButton() ) );
+    connect( LatitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
+    connect( LongitudeColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonLL() ) );
+
+    connect( NorthingColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonUTM() ) );
+    connect( EastingColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonUTM() ) );
+    connect( ZoneColumn_lineEdit, SIGNAL( textChanged( QString ) ), this, SLOT( enableOKButtonUTM() ) );
 }
 
 // ***********************************************************************************************************************
@@ -34,6 +38,7 @@ void UTMOptionsDialog::clearAll()
 {
     LatitudeColumn_lineEdit->setText( "" );
     LongitudeColumn_lineEdit->setText( "" );
+
     NorthingColumn_lineEdit->setText( "" );
     EastingColumn_lineEdit->setText( "" );
     ZoneColumn_lineEdit->setText( "" );
@@ -42,17 +47,17 @@ void UTMOptionsDialog::clearAll()
     ReferenceEllipsoid_comboBox_2->setCurrentIndex( 22 );
 
     NumOfDigits_spinBox->setValue( 4 );
-
     Dot_radioButton->setChecked( true );
 
-    enableOKButton();
+    enableOKButtonLL();
+    enableOKButtonUTM();
 }
 
 // **********************************************************************************************
 // **********************************************************************************************
 // **********************************************************************************************
 
-void UTMOptionsDialog::enableOKButton()
+void UTMOptionsDialog::enableOKButtonLL()
 {
     QList<int>  testList;
 
@@ -65,6 +70,54 @@ void UTMOptionsDialog::enableOKButton()
     if ( testList.at( 1 ) < 1 )  LongitudeColumn_lineEdit->setText( "" );
 
     if ( ( testList.at( 0 ) > 0 ) && ( testList.at( 1 ) > 0 ) )         // Latitude > 0 and Longitude > 0
+        b_OK = true;
+
+    if ( b_OK == true )
+    {
+        for ( int i=0; i<testList.count(); i++ )
+        {
+            if ( testList.at( i ) > 0 )
+            {
+                for ( int j=0; j<testList.count(); j++ )
+                {
+                    if ( ( i != j ) && ( testList.at( i ) == testList.at( j ) ) )
+                         b_OK = false;
+                }
+            }
+        }
+    }
+
+    if ( b_OK == true )
+    {
+        OK_pushButton->setEnabled( true );
+        OK_pushButton->setDefault( true );
+    }
+    else
+    {
+        OK_pushButton->setEnabled( false );
+        Cancel_pushButton->setDefault( true );
+    }
+}
+
+// **********************************************************************************************
+// **********************************************************************************************
+// **********************************************************************************************
+
+void UTMOptionsDialog::enableOKButtonUTM()
+{
+    QList<int>  testList;
+
+    bool b_OK = false;
+
+    testList.append( NorthingColumn_lineEdit->text().toInt() );          // 0
+    testList.append( EastingColumn_lineEdit->text().toInt() );           // 1
+    testList.append( ZoneColumn_lineEdit->text().toInt() );              // 2
+
+    if ( testList.at( 0 ) < 1 )  NorthingColumn_lineEdit->setText( "" );
+    if ( testList.at( 1 ) < 1 )  EastingColumn_lineEdit->setText( "" );
+    if ( testList.at( 2 ) < 1 )  ZoneColumn_lineEdit->setText( "" );
+
+    if ( ( testList.at( 0 ) > 0 ) && ( testList.at( 1 ) > 0 ) && ( testList.at( 2 ) > 0 ) )         // Northing > 0, Easting > 0, and Zone > 0
         b_OK = true;
 
     if ( b_OK == true )
@@ -134,20 +187,26 @@ int MainWindow::doUTMOptionsDialog( const int mode, int &i_LatitudeColumn, int &
         dialog.NumOfDigits_spinBox->setRange( 0, 10 );
         dialog.UTM_groupBox->hide();
         dialog.ReferenceEllipsoid_groupBox_2->hide();
+        dialog.enableOKButtonLL();
         break;
+
     case _UTMLL_:
         dialog.setWindowTitle( tr( "UTM to Latitude/Longitude" ) );
         dialog.NumOfDigits_spinBox->setValue( i_NumOfDigits );
         dialog.NumOfDigits_spinBox->setRange( 0, 10 );
         dialog.Geodetic_groupBox->hide();
         dialog.ReferenceEllipsoid_groupBox_1->hide();
+        dialog.enableOKButtonUTM();
+        break;
+
+    default:
+        dialog.enableOKButtonLL();
+        dialog.enableOKButtonUTM();
         break;
     }
 
     dialog.OK_pushButton->setWhatsThis( tr( "Close dialog" ) );
     dialog.Cancel_pushButton->setWhatsThis( tr( "Cancel dialog" ) );
-
-    dialog.enableOKButton();
 
     dialog.move( posDialog );
     dialog.resize( dialog.sizeHint() );

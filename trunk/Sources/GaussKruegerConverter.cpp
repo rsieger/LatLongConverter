@@ -72,10 +72,10 @@ int MainWindow::GaussKruegerConverter( const QString &s_FilenameIn, const QStrin
     switch( mode )
     {
     case _GKLL_:
-        tout << sl_Input.at( i++ ) << "\tLatitude\tLongitude" << s_EOL;
+        tout << "Latitude\tLongitude\t" << sl_Input.at( i++ ) << s_EOL;
         break;
     case _LLGK_:
-        tout << sl_Input.at( i++ ) << "\tHoch [m]\tRechts [m]\tStreifen" << s_EOL;
+        tout << "Hoch [m]\tRechts [m]\tStreifen\t" << sl_Input.at( i++ ) << s_EOL;
         break;
     }
 
@@ -100,7 +100,7 @@ int MainWindow::GaussKruegerConverter( const QString &s_FilenameIn, const QStrin
                 llc->convertLLtoGK( sl_Input.at( i ).section( "\t", i_ColumnLatitude-1, i_ColumnLatitude-1 ), sl_Input.at( i ).section( "\t", i_ColumnLongitude-1, i_ColumnLongitude-1 ) );
             }
 
-            tout << sl_Input.at( i ) << "\t" << QString( "%1" ).arg( llc->Hoch(), 0, 'f', i_NumOfDigits ) << "\t" << QString( "%1" ).arg( llc->Rechts(), 0, 'f', i_NumOfDigits ) << "\t" << llc->Streifen() << s_EOL;
+            tout << QString( "%1" ).arg( llc->Hoch(), 0, 'f', i_NumOfDigits ) << "\t" << QString( "%1" ).arg( llc->Rechts(), 0, 'f', i_NumOfDigits ) << "\t" << llc->Streifen() << "\t" << sl_Input.at( i ) << s_EOL;
 
             break;
         }
