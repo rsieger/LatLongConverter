@@ -2379,14 +2379,12 @@ QString MainWindow::findZip( const int mode )
 
 #if defined(Q_OS_WIN)
     QString s_7zX86exe = QProcessEnvironment::systemEnvironment().value( "ProgramFiles(x86)", "C:" );
-
     s_7zX86exe.append( "/7-Zip/7z.exe" );
     QFileInfo fi_7zX86exe( s_7zX86exe );
 
     if ( fi_7zX86exe.exists() == false )
     {
         QString s_7z64exe = QProcessEnvironment::systemEnvironment().value( "ProgramW6432", "C:" );
-
         s_7z64exe.append( "/7-Zip/7z.exe" );
         QFileInfo fi_7z64exe( s_7z64exe );
 
@@ -2446,14 +2444,12 @@ QString MainWindow::findUnzip( const int mode )
 
 #if defined(Q_OS_WIN)
     QString s_7zX86exe = QProcessEnvironment::systemEnvironment().value( "ProgramFiles(x86)", "C:" );
-
     s_7zX86exe.append( "/7-Zip/7z.exe" );
     QFileInfo fi_7zX86exe( s_7zX86exe );
 
     if ( fi_7zX86exe.exists() == false )
     {
         QString s_7z64exe = QProcessEnvironment::systemEnvironment().value( "ProgramW6432", "C:" );
-
         s_7z64exe.append( "/7-Zip/7z.exe" );
         QFileInfo fi_7z64exe( s_7z64exe );
 
