@@ -7,10 +7,10 @@ echo - macdeployqt
 cd ~/Development/GitHub/LatLongConverter
 
 rm -R '../../Distribution/LatLongConverter/LatLongConverter.app'
-cp -R './build-LatLongConverter-Desktop_Qt_5_7_1_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
+cp -R './build-LatLongConverter-Desktop_Qt_5_8_0_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
 cp './trunk/Resources/Info.plist' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Info.plist'
 
-/Developer/Qt/5.7/clang_64/bin/macdeployqt '../../Distribution/LatLongConverter/LatLongConverter.app'
+/Developer/Qt/5.8/clang_64/bin/macdeployqt '../../Distribution/LatLongConverter/LatLongConverter.app'
 
 echo - code signing
 
@@ -22,7 +22,6 @@ codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Insti
 
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/bearer/libqcorewlanbearer.dylib'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/bearer/libqgenericbearer.dylib'
-codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/imageformats/libqdds.dylib'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/imageformats/libqgif.dylib'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/imageformats/libqicns.dylib'
 codesign --force --verify --sign 'Developer ID Application: Alfred-Wegener-Institut fur Polar- und Meeresforschung (AWI)' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/PlugIns/imageformats/libqico.dylib'
