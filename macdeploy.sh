@@ -7,10 +7,10 @@ echo - macdeployqt
 cd ~/Development/GitHub/LatLongConverter
 
 rm -R '../../Distribution/LatLongConverter/LatLongConverter.app'
-cp -R './build-LatLongConverter-Desktop_Qt_5_8_0_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
+cp -R './build-LatLongConverter-Desktop_Qt_5_9_0_clang_64bit-Release/LatLongConverter.app' '../../Distribution/LatLongConverter/LatLongConverter.app'
 cp './trunk/Resources/Info.plist' '../../Distribution/LatLongConverter/LatLongConverter.app/Contents/Info.plist'
 
-/Developer/Qt/5.8/clang_64/bin/macdeployqt '../../Distribution/LatLongConverter/LatLongConverter.app'
+/Developer/Qt/5.9/clang_64/bin/macdeployqt '../../Distribution/LatLongConverter/LatLongConverter.app'
 
 echo - code signing
 
