@@ -95,7 +95,7 @@
        <widget class="QComboBox" name="EOL_ComboBox">
         <item>
          <property name="text">
-          <string>LF (Unix, MacOS X)</string>
+          <string>LF (Unix, macOS)</string>
          </property>
         </item>
         <item>
